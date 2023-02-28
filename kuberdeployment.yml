@@ -1,19 +1,20 @@
+---
 apiVersion: apps/v1
 kind: Deployment #Kubernetes resource we are creating
 metadata:
-  name: mvnwebapp-k8s-deployment
+  name: mvnwebapp
 spec:
   selector:
     matchLabels:
-      app: mvnwebapp-k8s
+      app: mvnwebapp
   replicas: 2 #No of replica that will be created for mvnwebapp-k8s
   template:
    metadata:
     labels:
-     app: mvnwebapp-k8s
+     app: mvnwebapp
   spec:
     containers:
-      - name: mvnwebapp-k8s
+      - name: mvnwebapp
         image: vinitpania/mvnwebapp #This image is used
         imagePullPolicy: IfNotPresent
         ports:
@@ -25,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mvnwebapp-k8s-deployment
+  name: mvnwebapp
 spec:
   selector:
-    app: mvnwebapp-k8s
+    app: mvnwebapp
   ports:
     - port: 9594
       protocol: "TCP"
