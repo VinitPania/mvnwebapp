@@ -17,7 +17,7 @@ spec:
         image: vinitpania/mvnwebapp #This image is used
         imagePullPolicy: IfNotPresent
         ports:
-         - containerPort: 9000 #this port is used
+         - containerPort: 9594 #this port is used
            
 
 ---
@@ -30,8 +30,8 @@ spec:
   selector:
     app: mvnwebapp-k8s
   ports:
-    - port: 9000
+    - port: 9594
       protocol: "TCP"
-      targetPort: 9000
+      targetPort: 9594
   type: NodePort
     
