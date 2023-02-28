@@ -1,4 +1,4 @@
-apiVersion: v1beta1
+apiVersion: v1
 kind: Deployment #Kubernetes resource we are creating
 metadata:
   name: mvnwebapp-k8s-deployment
